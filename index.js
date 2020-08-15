@@ -5,7 +5,7 @@ import './style.css';
 // Write Javascript code!
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
-
+const custdiv = document.getElementById('rwCustomers');
 
 //Airtable
 
@@ -21,6 +21,6 @@ base('Customers').select({
 }).firstPage(function(err, records) {
     if (err) { console.error(err); return; }
     records.forEach(function(record) {
-        $("#rwCustomers").text( record.get('Company Name'));
+        $.custdiv.append(record.get('Company Name'));
     });
 });
