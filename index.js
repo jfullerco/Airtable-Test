@@ -21,6 +21,6 @@ base('Customers').select({
 }).firstPage(function(err, records) {
     if (err) { console.error(err); return; }
     records.forEach(function(record) {
-        $.custdiv.append(record.get('Company Name'));
+        custdiv.innerText(record.get('Company Name'));
     });
 });
