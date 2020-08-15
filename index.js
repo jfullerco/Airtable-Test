@@ -25,8 +25,14 @@ base('Customers').select({
     
     records.forEach(function(record) {
         
-      
-      const custdiv = document.getElementsById('rwCustomers');
-        custdiv.text('record.get("Company Name")');
+      const custname = record.get('Customer Name'); 
+
+
+
     });
 });
+
+
+
+
+
