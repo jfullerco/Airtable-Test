@@ -1,11 +1,11 @@
 // Import stylesheets
 import './style.css';
-import 'jquery'
+
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
-
+const rw = document.getElementById('rwCustomers');
 
 
 //Airtable
@@ -23,7 +23,7 @@ base('Customers').select({
 }).firstPage(function(err, records) {
     if (err) { console.error(err); return; }
     records.forEach(function(record) {
-        const rw = document.getElementById('rwCustomers');
+        
         rw.insertBefore('Retrieved', record.get('Company Name'));
         
     });
