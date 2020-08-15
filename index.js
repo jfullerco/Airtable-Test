@@ -23,6 +23,7 @@ base('Customers').select({
 }).firstPage(function(err, records) {
     if (err) { console.error(err); return; }
     records.forEach(function(record) {
-        document.getElementById('rwCustomers').innerText('Retrieved', record.get('Company Name'));
+        const rw = document.getElementById('rwCustomers');
+        rw.innerText('Retrieved', record.get('Company Name'));
     });
 });
