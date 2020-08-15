@@ -24,6 +24,7 @@ base('Customers').select({
     if (err) { console.error(err); return; }
     records.forEach(function(record) {
         const rw = document.getElementById('rwCustomers');
-        rw.innerHTML('Retrieved', record.get('Company Name'));
+        rw.insertBefore('Retrieved', record.get('Company Name'));
+        
     });
 });
