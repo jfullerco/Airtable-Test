@@ -17,6 +17,7 @@
     "abort-controller": "^3.0.0",
     "abortcontroller-polyfill": "^1.5.0",
     "airtable": "^0.9.0",
+    "jquery": "^3.5.1",
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.0"
   },

@@ -1,6 +1,6 @@
 // Import stylesheets
 import './style.css';
-import './lib/airtable.js';
+
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
@@ -10,7 +10,7 @@ appDiv.innerHTML = `<h1>JS Starter</h1>`;
 //Airtable
 
 const Airtable = require('airtable');
-const base = new Airtable({ apiKey: 'keyTghlIwPbzDAwbK' }).base(
+const base = new Airtable({ apiKey: 'key7XQ8Is5o6z82BJ' }).base(
     'appX0EmdjgQnGuNKI'
 );
 
@@ -21,6 +21,6 @@ base('Customers').select({
 }).firstPage(function(err, records) {
     if (err) { console.error(err); return; }
     records.forEach(function(record) {
-        console.log('Retrieved', record.get('Company Name'));
+        $("#rwCustomers").text( record.get('Company Name'));
     });
 });
