@@ -3,7 +3,7 @@ import './style.css';
 
 
 
-//const appDiv = document.getElementById('app');
+const appDiv = document.getElementById('app');
 const container = document.getElementById('rwcustomers'); 
 
 //Airtable
@@ -23,9 +23,9 @@ base('Customers').select({
     
     records.forEach(function(record) {
        
-     var custname = record.get('Customer Name'); 
+     var custname = record.get('Customer Name') 
 
-    container.textContent(custname);
+    appDiv.textContent('custname');
 
     });
 });
