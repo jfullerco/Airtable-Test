@@ -4,7 +4,7 @@ import './style.css';
 
 
 const appDiv = document.getElementById('app');
-
+const appDiv = "<script>JS</script>";
 
 //Airtable
 
