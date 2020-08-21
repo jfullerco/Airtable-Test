@@ -4,30 +4,30 @@ import './style.css';
 
 
 const appDiv = document.getElementById('app');
-var container = document.getElementById('rwcustomers'); 
+ 
 
 //Airtable
 
 const Airtable = require('airtable');
 const base = new Airtable({ apiKey: 'key7XQ8Is5o6z82BJ' }).base(
-    'appX0EmdjgQnGuNKI'
+    'app3v5MjJ1b1OGZ1f'
 );
 
-const table = base('Customers');
+const table = base('Clients');
 
-base('Customers').select({
-    view: 'Customer Info'
+base('Clients').select({
+   
     
 }).firstPage(function(err, records) {
     if (err) { console.error(err); return; }
     
     records.forEach(function(record) {
        
-     const custname = record.get('Customer Name') 
+    var custname = record.get('Client_Name') 
 
-    container.textContent('custname');
-
+    appDiv.innerHtml = ("<p>"+ custname +"</p>")
     });
+    
 });
 
 
