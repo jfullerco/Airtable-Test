@@ -1,4 +1,5 @@
 // Import stylesheets
+import Airtable from 'airtable'
 import './style.css';
 
 
@@ -14,26 +15,22 @@ const base = new Airtable({ apiKey: 'key7XQ8Is5o6z82BJ' }).base(
     'app3v5MjJ1b1OGZ1f'
 );
 
-
-
-
-
-
-base('Clients').select({
-    view: 'Grid view'
-}).firstPage(function(err, records) {
-    if (err) { console.error(err); return; }
-    records.forEach(function(record) {
-       
-      var node = document.createTextNode(breakout)
-       var breakout = record.get('Client_Name')
-    
-  //console.log(breakout)
-    
-      
-    appDiv.append(custname)
-    
-   
-    
-    });
+fetch("https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "matchilling-chuck-norris-jokes-v1.p.rapidapi.com",
+		"x-rapidapi-key": "6ae9ccd8d4msha612d4fbe46ad0dp157a6ajsn13ad227dfd72",
+		"accept": "application/json"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.log(err);
 });
+
+
+
+
+
