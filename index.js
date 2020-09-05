@@ -1,5 +1,5 @@
 
-import fetch from 'node-fetch'
+//import fetch from 'node-fetch'
 import './style.css';
 
 
@@ -8,21 +8,29 @@ const appDiv = document.getElementById('app');
  
 
 
-fetch("https://joke3.p.rapidapi.com/v1/joke", {
+fetch("https://tiems-d1ca.restdb.io/rest/clients", {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-host": "joke3.p.rapidapi.com",
-		"x-rapidapi-key": "6ae9ccd8d4msha612d4fbe46ad0dp157a6ajsn13ad227dfd72"
+		"x-apikey": "11a5b5d7052c116ebf744abb41855b163c317"
 	}
 })
 .then(response => {
-	console.log(response);
+	return response
+  console.log(response);
+})
+.then(data => {
+
+const client = data(Client_Name)
+
 })
 .catch(err => {
 	console.log(err);
 });
 
+function client(data) {
 
+  appDiv.innerHTML = data(Client_Name)
+}
 
 
 
