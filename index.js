@@ -17,7 +17,6 @@ fetch("https://tiems-d1ca.restdb.io/rest/clients", {
 .then(res => res.json())
 //.then(data => console.log(data))
 .then(data => listClients(data))
-
 .then(listClients => data)
 
 function listClients(data) {
