@@ -11,26 +11,19 @@ const appDiv = document.getElementById('app');
 fetch("https://tiems-d1ca.restdb.io/rest/clients", {
 	"method": "GET",
 	"headers": {
-		"x-apikey": "11a5b5d7052c116ebf744abb41855b163c317"
+		"x-apikey": "5f2c8c05013b1c34acef749b"
 	}
 })
-.then(response => {
-	return response
-  console.log(response);
-})
+.then(res => res.json())
 .then(data => {
+ return listClients(data) }
 
-const client = data(Client_Name)
-
-})
-.catch(err => {
-	console.log(err);
-});
-
-function client(data) {
-
-  appDiv.innerHTML = data(Client_Name)
+)
+function listClients(data) {
+  for (var i = 0; i < data.length; i++) {
+  //console.log(data[i])
+  var div = document.createElement("div")
+  div.innerHTML = data[i]._id
+  appDiv.appendChild(div)
+  }
 }
-
-
-
