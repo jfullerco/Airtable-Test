@@ -25,12 +25,3 @@ function listClients(data) {
   selOption.appendChild(opt)
   }
 }
-
-
-
-//.then(data => {
-// return listClients(data) }
-//)
-
-
-
