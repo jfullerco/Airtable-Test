@@ -4,7 +4,7 @@ import './style.css';
 
 const appDiv = document.getElementById('app');
 const selOption = document.getElementById('cSelect') 
-
+const aClient = document.getElementById('aClient')
 
 fetch("https://tiems-d1ca.restdb.io/rest/clients", {
 	"method": "GET",
@@ -26,11 +26,34 @@ function listClients(data) {
   }
 }
 
+function buildForm() {
+  var a = document.createElement("FORM")
+  var b = document.createElement("INPUT")
+  var c = document.createElement("INPUT")
+
+  a.setAttribute("method", "get")
+  b.setAttribute("value", "", "id", "cName")
+  c.setAttribute("type", "button")
+  c.setAttribute("value", "click")
+  c.setAttribute("onclick", "getText()")
+  
+  
 
 
-//.then(data => {
-// return listClients(data) }
-//)
 
+function getText() {
+  
+  var d = document.getElementById("cName")
+  var e = d.value
+  console.log(e)
+  
+}
+
+aClient.appendChild(a)
+aClient.appendChild(b)
+aClient.appendChild(c)
+
+}
+buildForm()
 
 
