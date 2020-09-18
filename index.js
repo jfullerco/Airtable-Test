@@ -35,7 +35,7 @@ function buildForm() {
   b.setAttribute("value", "", "id", "cName")
   c.setAttribute("type", "button")
   c.setAttribute("value", "click")
-  c.setAttribute("onclick", "getText()")
+  c.setAttribute("onclick", "getText(d.value)")
   
   
 
@@ -44,8 +44,8 @@ function buildForm() {
 function getText() {
   
   var d = document.getElementById("cName")
-  var e = d.value
-  console.log(e)
+  
+  console.log(d.value)
   
 }
 
