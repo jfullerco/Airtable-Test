@@ -17,6 +17,15 @@ fetch("https://tiems-d1ca.restdb.io/rest/clients", {
 .then(data => listClients(data))
 .then(listClients => data)
 
+
+const clicker = function getText(event) {
+  
+  var d = document.getElementById("cName")
+  
+  console.log(d.value)
+  
+}
+
 function listClients(data) {
   for (var i = 0; i < data.length; i++) {
   //console.log(data[i])
@@ -35,19 +44,13 @@ function buildForm() {
   b.setAttribute("value", "", "id", "cName")
   c.setAttribute("type", "button")
   c.setAttribute("value", "click")
-  c.setAttribute("onclick", "getText(d.value)")
+  c.setAttribute("onclick", clicker)
   
   
 
 
 
-function getText() {
-  
-  var d = document.getElementById("cName")
-  
-  console.log(d.value)
-  
-}
+
 
 aClient.appendChild(a)
 aClient.appendChild(b)
